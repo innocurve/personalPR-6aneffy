@@ -95,25 +95,7 @@ const [posts, setPosts] = useState<PostData[]>([
       zh: '通过制作AI驱动的网站、图像和视频等各种数字内容，有效降低成本，并以最高质量支持有效的推广。',
     },
     tags: ['#AI마케팅', '#디지털콘텐츠', '#비용효율화', '#퀄리티향상']
-  },
-  {
-    id: 5,
-    title: {
-      ko: '금강샤론',
-      en: 'Geumgang Sharon',
-      ja: '金剛シャロン',
-      zh: '金刚沙龙',
-    },
-    date: '2024-01-05',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EB%8A%94%20%EB%94%94%EC%9E%90%EC%9D%B8-FGdqIT95etjPBkIXDiG4NcAKWr8gZC.png',
-    description: {
-      ko: '40년의 전통과 장인 정신으로 빚어낸 유리 공예의 아름다움, 금강샤론그라스는 고급스러운 디자인과 뛰어난 품질로 담금주의 깊은 맛과 멋을 완성하는 대한민국 대표 유리 용기 브랜드입니다.',
-      en: 'With 40 years of tradition and craftsmanship, Geumgang Sharon Glass is Korea\'s leading glass container brand that completes the deep taste and style of liquor with luxurious design and excellent quality.',
-      ja: '40年の伝統と職人精神で作り上げたガラス工芸の美しさ、金剛シャロングラスは高級なデザインと優れた品質で漬け込み酒の深い味わいと風情を完成させる韓国を代表するガラス容器ブランドです。',
-      zh: '拥有40年传统和工艺精神的金刚沙龙玻璃，以其奢华的设计和卓越的品质，完成了韩国顶级玻璃容器品牌的深厚口感和格调。',
-    },
-    tags: ['#담금주', '#프리미엄디자인', '#장인정신', '#유리공예']
-  },
+  }
 ]);
 
 const router = useRouter();
