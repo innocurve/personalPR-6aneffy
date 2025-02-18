@@ -11,10 +11,10 @@ import ChatMessage from '../components/ChatBot/ChatMessage'
 import Navigation from '../components/Navigation'
 
 const initialMessages = {
-  ko: "안녕하세요! 저는 오경찬's Clone입니다. 무엇을 도와드릴까요?",
-  en: "Hello! I'm Kyungchan Oh's Clone. How can I help you?",
-  ja: "こんにちは！吳烱燦のクローンです。どのようにお手伝いできますか？",
-  zh: "你好！我是吳烱燦的克隆。我能为您做些什么？"
+  ko: "안녕하세요! 저는 이상현's Clone입니다. 무엇을 도와드릴까요?",
+  en: "Hello! I'm Sanghyun Lee's Clone. How can I help you?",
+  ja: "こんにちは！李相顯のクローンです。どのようにお手伝いできますか？",
+  zh: "你好！我是李相顯的克隆。我能为您做些什么？"
 };
 
 export default function ChatPage() {

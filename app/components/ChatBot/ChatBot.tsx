@@ -289,7 +289,7 @@ const ChatBot = ({ isOpen: externalIsOpen, onOpenChange }: ChatBotProps) => {
                 />
               </div>
               <div>
-                <h2 className="font-bold text-white">오경찬&apos;s clone</h2>
+                <h2 className="font-bold text-white">이상현&apos;s clone</h2>
                 <p className="text-sm text-gray-100">온라인</p>
               </div>
             </div>

@@ -22,16 +22,16 @@ export const translations: TranslationDictionary = {
     zh: '价值观',
   },
   valuesDescription: {
-    ko: 'AI로\n더 나은 삶을 만들고\n인연을 소중히',
-    en: 'Creating better lives\nwith AI and\nvaluing relationships',
-    ja: 'AIで\nより良い人生を創り\n縁を大切に',
-    zh: '用AI\n创造更好的生活\n珍惜缘分',
+    ko: '우리를 날게 하는 것은\n환경이 아니라,\n날 수 있다는 믿음이다.',
+    en: 'What makes us fly\nis not the environment,\nbut the belief that we can fly.',
+    ja: '私たちを飛べるのは\n環境ではなく、\n飛べるという信念だ。',
+    zh: '让我们飞的不是环境\n而是相信能飞。',
   },
   history: {
-    ko: '연혁',
-    en: 'History',
-    ja: '経歴',
-    zh: '历史',
+    ko: '인증 및 자격',
+    en: 'Certifications & Qualifications',
+    ja: '認定・資格',
+    zh: '认证及资格',
   },
   activities: {
     ko: '프로젝트',
@@ -40,16 +40,16 @@ export const translations: TranslationDictionary = {
     zh: '项目',
   },
   name: {
-    ko: '오경찬',
-    en: 'Kyungchan Oh',
-    ja: '吳烱燦',
-    zh: '吳烱燦',
+    ko: '이상현',
+    en: 'Sanghyun Lee',
+    ja: '李相顯',
+    zh: '李相顯',
   },
   title: {
-    ko: 'Financial Planner|사단법인 부본부장',
-    en: 'Financial Planner|Vice Director of Non-Profit Organization',
-    ja: 'ファイナンシャルプランナー|社団法人副本部長',
-    zh: '理财规划师|社团法人副本部长',
+    ko: '사단법인 운영위원|AI Agent',
+    en: 'The Association Committee|AI Agent',
+    ja: '社団法人運営委員|AIエージェント',
+    zh: '社团法人运营委员|AI代理',
   },
   birth: {
     ko: '출생',
@@ -58,10 +58,10 @@ export const translations: TranslationDictionary = {
     zh: '出生',
   },
   birthDate: {
-    ko: '1998년 5월 14일',
-    en: 'May 14, 1998',
-    ja: '1998年5月14日',
-    zh: '1998年5月14日',
+    ko: '1999년 8월 9일',
+    en: 'August 9, 1999',
+    ja: '1999年8月9日',
+    zh: '1999年8月9日',
   },
   affiliation: {
     ko: '소속',
@@ -70,10 +70,10 @@ export const translations: TranslationDictionary = {
     zh: '隶属',
   },
   affiliationDescription: {
-    ko: '메리츠 RCM본부 2본부 3지점 FP\n(사)대한청년을세계로 대전본부 부본부장\n새마을 대덕구청년미래연대 부회장',
-    en: 'Financial Planner, Meritz RCM Division 2 Branch 3\nVice Director, Korea Youth to the World Association Daejeon Branch\nVice Chairman, Saemaul Daedeok-gu Youth Future Alliance',
-    ja: 'メリッツRCM本部第2本部第3支店 FP\n(社)大韓青年を世界へ大田本部副本部長\nセマウル大徳区青年未来連帯副会長',
-    zh: '美利兹RCM本部第2本部第3支店 理财规划师\n(社)韩国青年走向世界大田本部副本部长\n新村大德区青年未来联合副会长',
+    ko: '(사)대한청년을세계로\n이노커브',
+    en: 'Korea Youth to the World\nInnoCurve',
+    ja: '(社)韓国青年を世界へ\nイノカーブ',
+    zh: '(社)韩国青年走向世界\nInnoCurve',
   },
   education: {
     ko: '학력',
@@ -82,10 +82,10 @@ export const translations: TranslationDictionary = {
     zh: '教育',
   },
   educationDescription: {
-    ko: '추가 예정',
-    en: 'To be updated',
-    ja: '追加予定',
-    zh: '待添加',
+    ko: '국립한밭대학교 산업경영공학과 학사',
+    en: 'Hanbat National University\nIndustrial Management Engineering',
+    ja: '国立ハンバード大学 産業経営工学科 学士',
+    zh: '国立韓巴大学 产业经营工程学科 学士',
   },
   field: {
     ko: '분야',
@@ -94,10 +94,10 @@ export const translations: TranslationDictionary = {
     zh: '领域',
   },
   fieldDescription: {
-    ko: 'AI, 보험, 청년',
-    en: 'AI, Insurance, Youth',
-    ja: 'AI、保険、青年',
-    zh: 'AI，保险，青年',
+    ko: 'AI, 청년',
+    en: 'AI, Youth',
+    ja: 'AI、青年',
+    zh: 'AI，青年',
   },
   mbti: {
     ko: 'MBTI',
@@ -106,10 +106,10 @@ export const translations: TranslationDictionary = {
     zh: 'MBTI',
   },
   mbtiType: {
-    ko: 'ESTJ',
-    en: 'ESTJ',
-    ja: 'ESTJ',
-    zh: 'ESTJ',
+    ko: 'ENTJ',
+    en: 'ENTJ',
+    ja: 'ENTJ',
+    zh: 'ENTJ',
   },
   contact: {
     ko: '문의',
@@ -214,16 +214,16 @@ export const translations: TranslationDictionary = {
     zh: '联系方式',
   },
   greetingTitle: {
-    ko: '소중한 인연을 잇고,\n더 나은 미래를 설계하다',
-    en: 'Connecting Precious Relationships,\nDesigning a Better Future',
-    ja: '大切な縁をつなぎ、\nより良い未来を設計する',
-    zh: '连接珍贵的缘分，\n设计更美好的未来',
+    ko: '기회를 기다리는 사람은 많지만,\n기회를 만드는 사람이 세상을 바꾼다.',
+    en: 'While many wait for opportunities,\nthose who create them change the world.',
+    ja: '機会を待つ人は多いが、\n機会を作る人が世界を変える。',
+    zh: '等待机会的人很多，\n创造机会的人才能改变世界。',
   },
   greetingDescription: {
-    ko: 'AI가 발전할수록,\n인간의 가치는 더욱 선명해집니다.\n\n저는 보험과 AI를 결합해\n더 정확하고 신뢰할 수 있는\n맞춤형 솔루션을 제공합니다.\n\n작은 인연도 소중히 여기며,\n더 나은 미래를 함께 만들어갑니다.',
-    en: 'As AI advances,\nhuman value becomes even clearer.\n\nI provide accurate and reliable\ncustomized solutions by combining\ninsurance with AI.\n\nValuing every connection,\nwe create a better future together.',
-    ja: 'AIが発展するほど、\n人間の価値はより鮮明になります。\n\n保険とAIを組み合わせ、\nより正確で信頼できる\nカスタマイズされたソリューションを提供します。\n\n小さな縁も大切にし、\nより良い未来を共に創造します。',
-    zh: '随着AI的发展，\n人类的价值愈发清晰。\n\n我通过结合保险和AI，\n提供更准确、更可靠的\n定制化解决方案。\n\n珍惜每一份缘分，\n共同创造更美好的未来。',
+    ko: '세상은 빠르게 변하지만,\n변화를 만들어가는 것은 결국 사람입니다.\n기술은 도구일 뿐, 방향을 정하는 것은 우리의 선택입니다.\n\n저는 AI를 통해 더 많은 가능성을 열고,\n사람들이 새로운 길을 개척할 수 있도록 돕고자 합니다.\n\n흐름을 따르는 것이 아니라, 흐름을 만드는 것\n그것이 우리가 나아가야 할 길입니다.',
+    en: 'The world changes rapidly,\nbut ultimately, it is people who create change.\nTechnology is just a tool, and the direction we take is our choice.\n\nThrough AI, I want to open up more possibilities\nand help people pioneer new paths.\n\nNot following the flow, but creating it\nThat is the path we must take.',
+    ja: '世界は急速に変化していますが、\n変化を作り出すのは結局、人間です。\n技術は道具に過ぎず、方向を決めるのは私たちの選択です。\n\n私はAIを通じてより多くの可能性を開き、\n人々が新しい道を切り開けるよう支援したいと思います。\n\n流れに従うのではなく、流れを作ること\nそれが私たちの進むべき道です。',
+    zh: '世界在快速变化，\n但创造变革的终究是人。\n技术只是工具，方向由我们选择。\n\n我想通过AI开启更多可能性，\n帮助人们开拓新的道路。\n\n不是追随潮流，而是创造潮流\n这才是我们应该前进的方向。',
   },
   chatInputPlaceholder: {
     ko: '메시지를 입력하세요...',
@@ -298,16 +298,16 @@ export const translations: TranslationDictionary = {
     zh: '返回',
   },
   initialGreeting: {
-    ko: '안녕하세요! 저는 오경찬입니다. 무엇을 도와드릴까요?',
-    en: 'Hello! I am Kyungchan Oh. How can I help you?',
-    ja: 'こんにちは！吳烱燦と申します。何かお手伝いできることはありますか？',
-    zh: '你好！我是吳烱燦。我能为您做些什么？'
+    ko: '안녕하세요! 저는 이상현입니다. 무엇을 도와드릴까요?',
+    en: 'Hello! I am Sanghyun Lee. How can I help you?',
+    ja: 'こんにちは！李相顯と申します。何かお手伝いできることはありますか？',
+    zh: '你好！我是李相顯。我能为您做些什么？'
   },
   cloneGreeting: {
-    ko: "안녕하세요! 저는 오경찬's Clone입니다. 무엇을 도와드릴까요?",
-    en: "Hello! I'm Kyungchan Oh's Clone. How can I help you?",
-    ja: "こんにちは！吳烱燦のクローンです。どのようにお手伝いできますか？",
-    zh: "你好！我是吳烱燦的克隆。我能为您做些什么？"
+    ko: "안녕하세요! 저는 이상현's Clone입니다. 무엇을 도와드릴까요?",
+    en: "Hello! I'm Sanghyun Lee's Clone. How can I help you?",
+    ja: "こんにちは！李相顯のクローンです。どのようにお手伝いできますか？",
+    zh: "你好！我是李相顯的克隆。我能为您做些什么？"
   },
 };
 

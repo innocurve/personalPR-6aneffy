@@ -27,10 +27,10 @@ const [posts, setPosts] = useState<PostData[]>([
   { 
     id: 1, 
     title: {
-      ko: '(사)대한청년을세계로 미래전략포럼 개최',
-      en: 'Future Strategy Forum held by Korean Youth to the World Association',
-      ja: '(社)大韓青年を世界へ 未来戦略フォーラム開催',
-      zh: '(社)韩国青年走向世界协会举办未来战略论坛',
+      ko: '(사)대한청년을세계로\n미래전략포럼 개최',
+      en: 'Future Strategy Forum held by\nKorean Youth to the World Association',
+      ja: '(社)大韓青年を世界へ\n未来戦略フォーラム開催',
+      zh: '(社)韩国青年走向世界\n举办未来战略论坛',
     },
     date: '2024.12.3',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%EB%AF%B8%EB%9E%98%EC%A0%84%EB%9E%B5%ED%8F%AC%EB%9F%BC.jpg-lobjD33dLn9HHvFaqwYC57KhFIHDJb.jpeg',
@@ -51,7 +51,7 @@ const [posts, setPosts] = useState<PostData[]>([
       zh: 'InnoCurve InnoCard',
     },
     date: '2024-03-01',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C%20(300%20x%20200%20px)-YqEdcEhhDJYNijbTp5DIM9uER4sZNS.png',
+    image: '/id2image.png',
     description: {
       ko: '종이 명함을 넘어 자신만의 웹사이트로 나를 표현하고, 연결하며, 확장할 수 있는 AI 전자명함 서비스를 소개합니다. 당신의 이야기를 담고, 네트워크를 스마트하게 이어주는 디지털 공간을 만나보세요.',
       en: 'Introducing AI digital business cards that go beyond paper, allowing you to express, connect, and expand through your own website. Discover a digital space that holds your story and smartly connects your network.',
@@ -87,7 +87,7 @@ const [posts, setPosts] = useState<PostData[]>([
       zh: 'InnoCurve营销',
     },
     date: '2024-01-10',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C%20(300%20x%20200%20px)%20(1)-NxaNNp6obIPVIlOTroVTYrMKQeS8Z2.png',
+    image: '/id4image.png',
     description: {
       ko: 'AI를 활용한 홈페이지, 이미지, 영상 등 다양한 디지털 콘텐츠 제작을 통해 비용은 효율적으로 절감하고, 최상의 퀄리티로 효과적인 홍보를 지원합니다.',
       en: 'We support effective promotion with top quality while efficiently reducing costs through the production of various digital content such as AI-powered websites, images, and videos.',
@@ -100,20 +100,16 @@ const [posts, setPosts] = useState<PostData[]>([
 
 const router = useRouter();
 
+// 로컬스토리지 초기화 함수
+const resetLocalStorage = () => {
+  localStorage.removeItem('posts');
+  localStorage.setItem('posts', JSON.stringify(posts));
+  setPosts(posts);
+};
+
 // 초기 데이터 로드
 useEffect(() => {
-  const loadInitialData = () => {
-    const storedPosts = localStorage.getItem('posts');
-    if (!storedPosts) {
-      // 초기 데이터가 없을 때만 설정
-      localStorage.setItem('posts', JSON.stringify(posts));
-    } else {
-      // 저장된 데이터가 있으면 그것을 사용
-      setPosts(JSON.parse(storedPosts));
-    }
-  };
-
-  loadInitialData();
+  resetLocalStorage(); // 항상 초기화하도록 변경
 }, []); // 컴포넌트 마운트 시 한 번만 실행
 
 // localStorage 데이터 변경 감지 및 상태 업데이트
@@ -206,8 +202,8 @@ return (
             <nav className="hidden md:flex space-x-6">
               <Link href="#profile" onClick={(e) => handleScrollTo(e, 'profile')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('profile', language)}</Link>
               <Link href="#smart-options" onClick={(e) => handleScrollTo(e, 'smart-options')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('smartOptions', language)}</Link>
-              <Link href="#values" onClick={(e) => handleScrollTo(e, 'values')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('values', language)}</Link>
               <Link href="#history" onClick={(e) => handleScrollTo(e, 'history')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('history', language)}</Link>
+              <Link href="#values" onClick={(e) => handleScrollTo(e, 'values')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('values', language)}</Link>
               <Link href="#community" onClick={(e) => handleScrollTo(e, 'community')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('activities', language)}</Link>
             </nav>
             <LanguageToggle />
@@ -230,8 +226,8 @@ return (
           <div className="flex flex-col">
             <Link href="#profile" onClick={(e) => { setIsMenuOpen(false); handleScrollTo(e, 'profile'); }} className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">{translate('profile', language)}</Link>
             <Link href="#smart-options" onClick={(e) => { setIsMenuOpen(false); handleScrollTo(e, 'smart-options'); }} className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">{translate('smartOptions', language)}</Link>
-            <Link href="#values" onClick={(e) => { setIsMenuOpen(false); handleScrollTo(e, 'values'); }} className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">{translate('values', language)}</Link>
             <Link href="#history" onClick={(e) => { setIsMenuOpen(false); handleScrollTo(e, 'history'); }} className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">{translate('history', language)}</Link>
+            <Link href="#values" onClick={(e) => { setIsMenuOpen(false); handleScrollTo(e, 'values'); }} className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">{translate('values', language)}</Link>
             <Link href="#community" onClick={(e) => { setIsMenuOpen(false); handleScrollTo(e, 'community'); }} className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">{translate('activities', language)}</Link>
           </div>
         </motion.nav>
@@ -299,6 +295,13 @@ return (
 
       <div className="w-full overflow-x-hidden">
         <FadeInSection>
+          <section id="history" className="mb-8 bg-white rounded-xl p-8 shadow-lg overflow-hidden relative">
+            <History />
+          </section>
+        </FadeInSection>
+      </div>
+      <div className="w-full overflow-x-hidden">
+        <FadeInSection>
           <section id="values" className="mb-8 pt-8">
             <MyValues language={language} />
           </section>
@@ -306,13 +309,6 @@ return (
       </div>
       <div className="w-full overflow-x-hidden">
         <FadeInSection>
-          <section id="history" className="mb-8 bg-white rounded-xl p-8 shadow-lg overflow-hidden relative">
-            <History />
-          </section>
-        </FadeInSection>
-      </div>
-      <div className="w-full overflow-x-hidden">
-      <FadeInSection>
           <section id="community" className="py-16">
             <div className="container mx-auto px-4">
               <Swiper
@@ -353,16 +349,17 @@ return (
                       onClick={() => handlePostClick(post.id)}
                       className="bg-white rounded-lg shadow-md cursor-pointer transform transition-all duration-300 hover:scale-105 h-[340px] flex flex-col"
                     >
-                      <div className="relative h-36 rounded-t-lg overflow-hidden">
+                      <div className="relative h-[200px] rounded-t-lg overflow-hidden bg-gray-50 flex items-center justify-center">
                         <Image
                           src={post.image}
                           alt={post.title[language]}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          className="object-cover"
+                          priority
                         />
                       </div>
                       <div className="p-4 flex flex-col flex-1">
-                        <h3 className="text-lg font-semibold mb-2 overflow-hidden"
+                        <h3 className="text-lg font-semibold mb-2 overflow-hidden whitespace-pre-line"
                             style={{
                               display: '-webkit-box',
                               WebkitBoxOrient: 'vertical',
@@ -398,25 +395,24 @@ return (
             <h3 className="font-bold text-lg mb-4">{translate('contact', language)}</h3>
             <div className="flex items-center space-x-2 mb-2">
               <Mail className="w-5 h-5" />
-              <p>zhrpxk0514@naver.com</p>
+              <p>tkdgus990809@gmail.com</p>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="w-5 h-5" />
-              <p>010-9984-9308</p>
+              <p>010-8454-4274</p>
             </div>
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4">{translate('affiliation', language)}</h3>
             <div className="space-y-2">
-              <p>메리츠 RCM 2본부</p>
               <p>(사)대한청년을세계로</p>
-              <p>새마을 대덕구청년미래연대</p>
+              <p>이노커브</p>
             </div>
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4">{translate('socialMedia', language)}</h3>
             <div className="space-y-2">
-              <Link href="https://www.instagram.com/o_ooookc/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
+              <Link href="https://www.instagram.com/6aneffy/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
                 <span>Instagram</span>
               </Link>
             </div>
