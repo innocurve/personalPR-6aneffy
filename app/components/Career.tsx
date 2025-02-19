@@ -159,10 +159,10 @@ export default function Career() {
               className="border-b border-gray-100 pb-4 last:border-b-0"
               role="listitem"
             >
-              <h3 className="text-lg font-semibold text-[#4B6BF5] mb-1">
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-[#4B6BF5] mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
                 {cert.title}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-xs sm:text-sm text-gray-600">
                 {cert.subtitle}
               </p>
             </li>
