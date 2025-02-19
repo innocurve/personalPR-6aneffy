@@ -94,7 +94,7 @@ export default function GreetingVideo() {
             </svg>
             <h1 className="text-lg sm:text-xl md:text-3xl font-bold mb-4 sm:mb-6 text-center mx-12 sm:mx-8">
               {translate('greetingTitle', language).split('\n').map((line, i) => (
-                <span key={i} className="block">{line}</span>
+                <span key={i} className="block whitespace-nowrap">{line}</span>
               ))}
             </h1>
             <p className="text-lg relative z-10">
