@@ -89,10 +89,10 @@ export default function GreetingVideo() {
           </Card>
 
           <div className="text-center space-y-4 mt-8 relative">
-            <svg className="absolute top-0 left-0 w-16 h-16 text-gray-400 transform -translate-x-1/4 -translate-y-1/4 z-0" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <svg className="absolute top-0 left-0 w-12 sm:w-16 h-12 sm:h-16 text-gray-400 transform -translate-x-1/3 -translate-y-1/3 sm:-translate-x-1/4 sm:-translate-y-1/4 z-0" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
             </svg>
-            <h1 className="text-lg sm:text-xl md:text-3xl font-bold mb-4 sm:mb-6 text-center whitespace-pre-line mx-8">
+            <h1 className="text-lg sm:text-xl md:text-3xl font-bold mb-4 sm:mb-6 text-center whitespace-pre-line mx-12 sm:mx-8">
               {translate('greetingTitle', language)}
             </h1>
             <p className="text-lg relative z-10">
@@ -100,7 +100,7 @@ export default function GreetingVideo() {
                 <span key={i}>{line}<br /></span>
               ))}
             </p>
-            <svg className="absolute top-0 right-0 w-16 h-16 text-gray-400 transform translate-x-1/4 -translate-y-1/4 rotate-180 z-0" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <svg className="absolute top-0 right-0 w-12 sm:w-16 h-12 sm:h-16 text-gray-400 transform translate-x-1/3 -translate-y-1/3 sm:translate-x-1/4 sm:-translate-y-1/4 rotate-180 z-0" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
             </svg>
           </div>
