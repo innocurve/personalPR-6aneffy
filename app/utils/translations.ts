@@ -309,6 +309,18 @@ export const translations: TranslationDictionary = {
     ja: "こんにちは！李相顯のクローンです。どのようにお手伝いできますか？",
     zh: "你好！我是李相顯的克隆。我能为您做些什么？"
   },
+  formEmail: {
+    ko: '이메일',
+    en: 'Email',
+    ja: 'メール',
+    zh: '电子邮件',
+  },
+  formEmailPlaceholder: {
+    ko: '이메일을 입력하세요',
+    en: 'Enter your email',
+    ja: 'メールアドレスを入力してください',
+    zh: '请输入电子邮件',
+  },
 };
 
 export function translate(key: TranslationKey, lang: Language): string {

@@ -15,7 +15,7 @@ export default function InquiryPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
-    birthdate: '',
+    email: '',
     phone: '',
     inquiry: ''
   })
@@ -48,7 +48,7 @@ export default function InquiryPage() {
         // 폼 초기화
         setFormData({
           name: '',
-          birthdate: '',
+          email: '',
           phone: '',
           inquiry: ''
         })
@@ -99,20 +99,6 @@ export default function InquiryPage() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {translate('formBirthdate', language)}
-                  </label>
-                  <input
-                    type="text"
-                    name="birthdate"
-                    value={formData.birthdate}
-                    onChange={handleChange}
-                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder={translate('formBirthdatePlaceholder', language)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     {translate('formPhone', language)}
                   </label>
                   <input
@@ -122,6 +108,20 @@ export default function InquiryPage() {
                     onChange={handleChange}
                     className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={translate('formPhonePlaceholder', language)}
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    {translate('formEmail', language)}
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder={translate('formEmailPlaceholder', language)}
                     required
                   />
                 </div>

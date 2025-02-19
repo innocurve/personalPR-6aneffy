@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         name: data.name,
-        birthdate: data.birthdate,
+        email: data.email,
         phone: data.phone,
         inquiry: data.inquiry,
         submittedAt: new Date().toISOString()
