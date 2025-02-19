@@ -202,10 +202,10 @@ export const translations: TranslationDictionary = {
     zh: '问候视频',
   },
   innoCardInquiry: {
-    ko: 'InnoCard\n문의',
-    en: 'InnoCard\nInquiry',
-    ja: 'InnoCard\nお問い合わせ',
-    zh: 'InnoCard\n咨询',
+    ko: '문의',
+    en: 'Inquiry',
+    ja: 'お問い合わせ',
+    zh: '咨询',
   },
   contactOptions: {
     ko: '연락하기',

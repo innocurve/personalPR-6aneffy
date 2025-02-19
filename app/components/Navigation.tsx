@@ -44,23 +44,34 @@ export default function Navigation({ language }: NavigationProps) {
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" onClick={handleLogoClick}>
+            <Link href="/" className="flex items-center">
               <Image 
                 src="/logo.png" 
                 alt="이노커브 로고" 
                 width={160} 
                 height={64} 
+                priority
                 className="object-contain cursor-pointer"
               />
             </Link>
           </div>
           <div className="flex items-center space-x-4">
             <nav className="hidden md:flex space-x-6">
-              <Link href="/#profile" onClick={(e) => handleScrollTo(e, 'profile')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('profile', language)}</Link>
-              <Link href="/#contact" onClick={(e) => handleScrollTo(e, 'contact')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('smartOptions', language)}</Link>
-              <Link href="/#values" onClick={(e) => handleScrollTo(e, 'values')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('values', language)}</Link>
-              <Link href="/#history" onClick={(e) => handleScrollTo(e, 'history')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('history', language)}</Link>
-              <Link href="/#community" onClick={(e) => handleScrollTo(e, 'community')} className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">{translate('activities', language)}</Link>
+              <Link href="/#profile" className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">
+                {translate('profile', language)}
+              </Link>
+              <Link href="/#smart-options" className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">
+                {translate('smartOptions', language)}
+              </Link>
+              <Link href="/#history" className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">
+                {translate('history', language)}
+              </Link>
+              <Link href="/#values" className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">
+                {translate('values', language)}
+              </Link>
+              <Link href="/#community" className="font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300">
+                {translate('activities', language)}
+              </Link>
             </nav>
             <LanguageToggle />
             <button className="md:hidden" onClick={toggleMenu}>
@@ -80,11 +91,21 @@ export default function Navigation({ language }: NavigationProps) {
             transition={{ duration: 0.3 }}
           >
             <div className="flex flex-col">
-              <Link href="/#profile" onClick={(e) => { toggleMenu(); handleScrollTo(e, 'profile'); }} className="block p-4 font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400">{translate('profile', language)}</Link>
-              <Link href="/#contact" onClick={(e) => { toggleMenu(); handleScrollTo(e, 'contact'); }} className="block p-4 font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400">{translate('smartOptions', language)}</Link>
-              <Link href="/#values" onClick={(e) => { toggleMenu(); handleScrollTo(e, 'values'); }} className="block p-4 font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400">{translate('values', language)}</Link>
-              <Link href="/#history" onClick={(e) => { toggleMenu(); handleScrollTo(e, 'history'); }} className="block p-4 font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400">{translate('history', language)}</Link>
-              <Link href="/#community" onClick={(e) => { toggleMenu(); handleScrollTo(e, 'community'); }} className="block p-4 font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400">{translate('activities', language)}</Link>
+              <Link href="/#profile" className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">
+                {translate('profile', language)}
+              </Link>
+              <Link href="/#smart-options" className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">
+                {translate('smartOptions', language)}
+              </Link>
+              <Link href="/#history" className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">
+                {translate('history', language)}
+              </Link>
+              <Link href="/#values" className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">
+                {translate('values', language)}
+              </Link>
+              <Link href="/#community" className="block p-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition duration-300 font-mono tracking-tight">
+                {translate('activities', language)}
+              </Link>
             </div>
           </motion.nav>
         )}

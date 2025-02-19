@@ -3,6 +3,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { LanguageProvider } from './contexts/LanguageContext';
 import { Inter } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
+import { Toaster } from 'sonner'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -53,11 +56,12 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.className}`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.className} ${GeistSans.variable} ${GeistMono.variable} font-sans`}
       >
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <Toaster position="top-center" />
       </body>
     </html>
   );
