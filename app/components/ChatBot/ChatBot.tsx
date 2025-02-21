@@ -169,7 +169,8 @@ const ChatBot = ({ isOpen: externalIsOpen, onOpenChange }: ChatBotProps) => {
       // PDF 내용이 있으면 시스템 메시지에 추가
       const systemMessage: Message | null = pdfContent ? {
         role: 'system',
-        content: `다음은 업로드된 PDF 파일의 내용입니다:\n\n${pdfContent}\n\n이 내용을 참고하여 사용자의 질문에 답변해주세요.`
+        content: `다음은 업로드된 PDF 파일의 내용입니다:\n\n${pdfContent}\n\n이 내용을 참고하여 사용자의 질문에 답변해주세요.`,
+        timestamp: Date.now()
       } : null;
 
       const response = await fetch('/api/chat', {
@@ -191,12 +192,17 @@ const ChatBot = ({ isOpen: externalIsOpen, onOpenChange }: ChatBotProps) => {
       const data = await response.json();
       
       // 봇 응답 추가
-      setMessages(prev => [...prev, { role: 'assistant', content: data.response }]);
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: data.response,
+        timestamp: Date.now()
+      }]);
     } catch (error) {
       console.error('Error:', error);
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: '죄송합니다. 오류가 발생했습니다.'
+        content: '죄송합니다. 오류가 발생했습니다.',
+        timestamp: Date.now()
       }]);
     } finally {
       setIsLoading(false);

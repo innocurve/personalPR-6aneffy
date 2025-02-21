@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Send, Mic, MicOff, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
-import { io } from 'socket.io-client'
 
 export interface Message {
   role: 'user' | 'assistant' | 'system'
@@ -23,36 +22,11 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isDarkMode, placeh
   const [isProcessing, setIsProcessing] = useState(false)
   const [audioLevel, setAudioLevel] = useState<number>(0)
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
-  const socketRef = useRef<any>(null)
+  const chunksRef = useRef<Blob[]>([])
   const analyserRef = useRef<AnalyserNode | null>(null)
   const animationFrameRef = useRef<number>()
 
-  useEffect(() => {
-    socketRef.current = io({
-      path: '/api/socket',
-    })
-
-    socketRef.current.on('connect', () => {
-      console.log('Connected to WebSocket')
-    })
-
-    socketRef.current.on('transcription', (text: string) => {
-      if (text.trim()) {
-        onSendMessage(text.trim())
-      }
-    })
-
-    socketRef.current.on('error', (error: { message: string }) => {
-      toast.error(error.message)
-    })
-
-    return () => {
-      if (socketRef.current) {
-        socketRef.current.disconnect()
-      }
-    }
-  }, [onSendMessage])
-
+  // 컴포넌트 언마운트 시 정리
   useEffect(() => {
     return () => {
       if (animationFrameRef.current) {
@@ -72,6 +46,34 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isDarkMode, placeh
     }
   }
 
+  const processAudio = async (audioBlob: Blob) => {
+    try {
+      setIsProcessing(true)
+      const formData = new FormData()
+      formData.append('audio', audioBlob, 'recording.webm')
+
+      const response = await fetch('/api/stt', {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (!response.ok) {
+        throw new Error('음성 변환에 실패했습니다.')
+      }
+
+      const data = await response.json()
+      if (data.text) {
+        // 음성 인식 결과를 바로 전송
+        onSendMessage(data.text)
+      }
+    } catch (error) {
+      console.error('음성 처리 오류:', error)
+      toast.error('음성을 텍스트로 변환하는 중 오류가 발생했습니다.')
+    } finally {
+      setIsProcessing(false)
+    }
+  }
+
   const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
@@ -79,7 +81,9 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isDarkMode, placeh
         mimeType: 'audio/webm;codecs=opus'
       })
       mediaRecorderRef.current = mediaRecorder
+      chunksRef.current = []
 
+      // 오디오 컨텍스트 설정
       const audioContext = new AudioContext()
       const source = audioContext.createMediaStreamSource(stream)
       const analyser = audioContext.createAnalyser()
@@ -87,6 +91,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isDarkMode, placeh
       source.connect(analyser)
       analyserRef.current = analyser
 
+      // 음성 레벨 모니터링
       const updateAudioLevel = () => {
         if (!isRecording) return
         const dataArray = new Uint8Array(analyser.frequencyBinCount)
@@ -97,22 +102,23 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isDarkMode, placeh
       }
       updateAudioLevel()
 
-      mediaRecorder.ondataavailable = async (e) => {
-        if (e.data.size > 0 && socketRef.current) {
-          socketRef.current.emit('audioData', e.data)
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) {
+          chunksRef.current.push(e.data)
         }
       }
 
-      mediaRecorder.onstop = () => {
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(chunksRef.current, { type: 'audio/webm' })
+        await processAudio(audioBlob)
         stream.getTracks().forEach(track => track.stop())
         if (animationFrameRef.current) {
           cancelAnimationFrame(animationFrameRef.current)
         }
       }
 
-      mediaRecorder.start(1000)
+      mediaRecorder.start(1000) // 1초마다 데이터 수집
       setIsRecording(true)
-      socketRef.current?.emit('startRecording')
       toast.success('음성 녹음을 시작합니다. 말씀해 주세요.')
     } catch (error) {
       console.error('녹음 시작 오류:', error)
