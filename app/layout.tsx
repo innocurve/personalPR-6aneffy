@@ -36,13 +36,15 @@ export const metadata: Metadata = {
       width: 1200,
       height: 630,
       alt: 'InnoCard'
-    }]
+    }],
+    siteName: 'InnoCard'
   },
   twitter: {
     card: 'summary_large_image',
     title: 'INNOCURVE',
     description: 'INNOCURVE - AI 기반 디지털 혁신 기업',
-    images: ['/images/og-image.png'],
+    images: '/og-image.png',
+    creator: '@innocurve'
   },
 };
 
