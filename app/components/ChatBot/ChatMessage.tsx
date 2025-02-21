@@ -88,7 +88,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isDarkMode }) => {
       }
 
       setIsLoading(true)
-      setLoadingProgress(10)
+      const toastId = toast.loading('목소리 가다듬는 중...')
 
       // 캐시 확인
       const cachedAudio = getAudioFromCache(message.content)
@@ -96,7 +96,6 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isDarkMode }) => {
 
       if (cachedAudio) {
         audioBlob = cachedAudio
-        setLoadingProgress(90)
       } else {
         // 캐시에 없으면 API 호출
         const response = await fetch('/api/tts', {
@@ -111,15 +110,13 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isDarkMode }) => {
           }),
         })
 
-        setLoadingProgress(50)
-
         if (!response.ok) {
           const errorData = await response.json()
+          toast.dismiss(toastId)
           throw new Error(errorData.error || 'TTS 요청 실패')
         }
 
         audioBlob = await response.blob()
-        setLoadingProgress(80)
 
         // 캐시에 저장
         audioCache.set(message.content, {
@@ -139,8 +136,6 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isDarkMode }) => {
       const newAudio = new Audio(newAudioUrl)
       newAudio.playbackRate = 1.3
 
-      setLoadingProgress(90)
-
       // 재생 완료 시 처리
       newAudio.onended = () => {
         setIsPlaying(false)
@@ -148,13 +143,14 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isDarkMode }) => {
 
       // 로드 완료 시 처리
       newAudio.oncanplaythrough = async () => {
-        setLoadingProgress(100)
         setAudio(newAudio)
         try {
           await newAudio.play()
           setIsPlaying(true)
+          toast.dismiss(toastId)
         } catch (error) {
           console.error('오디오 재생 오류:', error)
+          toast.dismiss(toastId)
           toast.error('오디오 재생에 실패했습니다')
         }
       }
@@ -165,7 +161,6 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isDarkMode }) => {
       setIsPlaying(false)
     } finally {
       setIsLoading(false)
-      setLoadingProgress(0)
     }
   }
 
@@ -185,32 +180,22 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isDarkMode }) => {
         <div className="flex items-start gap-2">
           <p className="whitespace-pre-wrap break-words">{message.content}</p>
           {message.role === 'assistant' && (
-            <div className="relative">
-              <button
-                onClick={playTTS}
-                disabled={isLoading}
-                className={`ml-2 p-1 rounded-full hover:bg-gray-200 transition-colors ${
-                  isDarkMode ? 'hover:bg-gray-600' : ''
-                } ${isLoading ? 'cursor-not-allowed opacity-50' : ''}`}
-                title={isPlaying ? '음성 중지' : isLoading ? `변환 중... ${loadingProgress}%` : '음성으로 듣기'}
-              >
-                {isLoading ? (
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                ) : isPlaying ? (
-                  <VolumeX className="w-4 h-4" />
-                ) : (
-                  <Volume2 className="w-4 h-4" />
-                )}
-              </button>
-              {isLoading && loadingProgress > 0 && (
-                <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-200 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-blue-500 transition-all duration-300"
-                    style={{ width: `${loadingProgress}%` }}
-                  />
-                </div>
+            <button
+              onClick={playTTS}
+              disabled={isLoading}
+              className={`ml-2 p-1 rounded-full hover:bg-gray-200 transition-colors ${
+                isDarkMode ? 'hover:bg-gray-600' : ''
+              } ${isLoading ? 'cursor-not-allowed opacity-50' : ''}`}
+              title={isPlaying ? '음성 중지' : '음성으로 듣기'}
+            >
+              {isLoading ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : isPlaying ? (
+                <VolumeX className="w-4 h-4" />
+              ) : (
+                <Volume2 className="w-4 h-4" />
               )}
-            </div>
+            </button>
           )}
         </div>
       </div>

@@ -119,10 +119,10 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isDarkMode, placeh
 
       mediaRecorder.start(1000) // 1초마다 데이터 수집
       setIsRecording(true)
-      toast.success('음성 녹음을 시작합니다. 말씀해 주세요.')
+      toast.success('음성 인식을 시작합니다')
     } catch (error) {
       console.error('녹음 시작 오류:', error)
-      toast.error('마이크 접근이 거부되었습니다.')
+      toast.error('마이크 접근 권한이 필요합니다')
     }
   }
 
@@ -130,7 +130,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isDarkMode, placeh
     if (mediaRecorderRef.current && isRecording) {
       mediaRecorderRef.current.stop()
       setIsRecording(false)
-      toast.success('음성 녹음이 완료되었습니다.')
+      toast.success('음성 인식이 완료되었습니다')
     }
   }
 
