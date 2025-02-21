@@ -41,10 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'INNOCURVE',
-    description: 'INNOCURVE - AI 기반 디지털 혁신 기업',
-    images: '/og-image.png',
-    creator: '@innocurve'
+    title: 'InnoCard',
+    description: 'InnoCard - 혁신적인 전자 명함 솔루션',
+    images: '/og-image.png'
   },
 };
 
