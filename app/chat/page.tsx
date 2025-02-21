@@ -234,8 +234,10 @@ export default function ChatPage() {
               <Image
                 src="/profile.png"
                 alt={translate('name', language)}
-                layout="fill"
+                fill
+                sizes="(max-width: 768px) 64px, 96px"
                 className="object-cover"
+                priority
               />
             </div>
             <span className="text-lg font-medium">{translate('name', language)}{translate('cloneTitle', language)}</span>

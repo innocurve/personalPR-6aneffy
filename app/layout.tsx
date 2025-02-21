@@ -23,6 +23,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: "InnoCard",
   description: "InnoCard - 혁신적인 전자 명함 솔루션",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   icons: {
     icon: '/favicon.ico',
   },

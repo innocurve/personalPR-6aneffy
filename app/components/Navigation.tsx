@@ -49,9 +49,9 @@ export default function Navigation({ language }: NavigationProps) {
                 src="/logo.png" 
                 alt="이노커브 로고" 
                 width={160} 
-                height={64} 
+                height={40} 
                 priority
-                className="object-contain cursor-pointer"
+                className="object-contain w-auto h-auto"
               />
             </Link>
           </div>
