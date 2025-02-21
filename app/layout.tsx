@@ -3,9 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { LanguageProvider } from './contexts/LanguageContext';
 import { Inter } from 'next/font/google'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import { Toaster } from 'sonner'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +20,6 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: "InnoCard",
   description: "InnoCard - 혁신적인 전자 명함 솔루션",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   icons: {
     icon: '/favicon.ico',
   },
@@ -36,14 +32,13 @@ export const metadata: Metadata = {
       width: 1200,
       height: 630,
       alt: 'InnoCard'
-    }],
-    siteName: 'InnoCard'
+    }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'InnoCard',
-    description: 'InnoCard - 혁신적인 전자 명함 솔루션',
-    images: '/og-image.png'
+    title: 'INNOCURVE',
+    description: 'INNOCURVE - AI 기반 디지털 혁신 기업',
+    images: ['/images/og-image.png'],
   },
 };
 
@@ -58,12 +53,11 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.className} ${GeistSans.variable} ${GeistMono.variable} font-sans`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.className}`}
       >
         <LanguageProvider>
           {children}
         </LanguageProvider>
-        <Toaster position="top-center" />
       </body>
     </html>
   );
