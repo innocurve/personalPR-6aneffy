@@ -29,8 +29,41 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isDarkMode }) => {
       if (audioUrl) {
         URL.revokeObjectURL(audioUrl)
       }
+      if (audio) {
+        audio.pause()
+        setIsPlaying(false)
+      }
     }
-  }, [audioUrl])
+  }, [audioUrl, audio])
+
+  // 페이지 이동, 새로고침 시 음성 중지
+  useEffect(() => {
+    const stopAudio = () => {
+      if (audio) {
+        audio.pause()
+        setIsPlaying(false)
+      }
+    }
+
+    // 페이지 이동 시
+    window.addEventListener('popstate', stopAudio)
+    // 새로고침 또는 페이지 나가기 시
+    window.addEventListener('beforeunload', stopAudio)
+    // 다른 링크 클릭 시
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (target.tagName === 'A' || target.closest('a')) {
+        stopAudio()
+      }
+    }
+    window.addEventListener('click', handleClick)
+
+    return () => {
+      window.removeEventListener('popstate', stopAudio)
+      window.removeEventListener('beforeunload', stopAudio)
+      window.removeEventListener('click', handleClick)
+    }
+  }, [audio])
 
   const getAudioFromCache = (text: string) => {
     const cached = audioCache.get(text)
