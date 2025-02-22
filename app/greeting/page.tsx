@@ -14,7 +14,7 @@ export default function GreetingVideo() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   const videoSources = {
-    ko: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KakaoTalk_20241215_192017967-fPJmLLPpokC9OE7iczdUQlgGvgImk3.mp4",
+    ko: "/greetingvideo/greetingko.mp4",
     en: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled%20Video%20(10)-3TdUn7xqPnnpeeVyofZDDUKiIoig5x.mp4",
     ja: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KakaoTalk_20241215_192019850-uUa3gchO094I9intvck6PuN9mrwKti.mp4",
     zh: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled%20Video%20(13)-47V2mk3OlCFd5iuV7NdVvhnrVWCSuF.mp4"
@@ -62,27 +62,12 @@ export default function GreetingVideo() {
                   <video 
                     ref={videoRef}
                     src={videoSources[language] || videoSources['en']}
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-cover rounded-lg cursor-pointer"
                     playsInline
+                    onClick={togglePlay}
                   >
                     Your browser does not support the video tag.
                   </video>
-                  <button 
-                    onClick={togglePlay}
-                    className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 transition-opacity duration-300 hover:bg-opacity-50 rounded-lg"
-                    aria-label={isPlaying ? 'Pause video' : 'Play video'}
-                  >
-                    {isPlaying ? (
-                      <svg className="w-16 h-16 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <rect x="6" y="4" width="4" height="16" />
-                        <rect x="14" y="4" width="4" height="16" />
-                      </svg>
-                    ) : (
-                      <svg className="w-16 h-16 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <polygon points="5 3 19 12 5 21 5 3" />
-                      </svg>
-                    )}
-                  </button>
                 </div>
               </div>
             </CardContent>

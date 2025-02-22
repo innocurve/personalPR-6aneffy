@@ -9,6 +9,11 @@ import { translate } from '../../utils/translations'
 import { useLanguage } from '@/app/hooks/useLanguage'
 import type { PostData } from '@/app/types/post'
 import Navigation from '@/app/components/Navigation'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation as SwiperNavigation, Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 export default function PostDetail() {
   const params = useParams()
@@ -45,13 +50,57 @@ export default function PostDetail() {
       <main className="max-w-4xl mx-auto p-5 pt-24">
         <article className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="relative h-[200px] sm:h-[300px] md:h-[400px] w-full">
-            <Image 
-              src={post.image} 
-              alt={post.title[language]} 
-              fill
-              className="object-contain bg-gray-50"
-              priority
-            />
+            {post.images ? (
+              <Swiper
+                modules={[SwiperNavigation, Pagination, Autoplay]}
+                spaceBetween={0}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                loop={post.images.length > 1}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true
+                }}
+                className="w-full h-full"
+              >
+                <SwiperSlide>
+                  <Image 
+                    src={post.image} 
+                    alt={post.title[language]} 
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 900px, 1200px"
+                    quality={90}
+                    className="object-contain bg-gray-50"
+                    priority
+                  />
+                </SwiperSlide>
+                {post.images.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <Image 
+                      src={image} 
+                      alt={`${post.title[language]} - ${index + 1}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 900px, 1200px"
+                      quality={90}
+                      className="object-contain bg-gray-50"
+                      loading="lazy"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+              <Image 
+                src={post.image} 
+                alt={post.title[language]} 
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 900px, 1200px"
+                quality={90}
+                className="object-contain bg-gray-50"
+                priority
+              />
+            )}
           </div>
           <div className="p-4 sm:p-6 md:p-8">
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
@@ -112,4 +161,3 @@ export default function PostDetail() {
     </div>
   )
 }
-
