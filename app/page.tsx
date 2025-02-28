@@ -316,11 +316,6 @@ return (
                     className="text-center"
                   />
                   <ProfileItem 
-                    label={translate('education', language)} 
-                    value={translate('educationDescription', language).split('\n')} 
-                    className="text-center"
-                  />
-                  <ProfileItem 
                     label={translate('field', language)} 
                     value={[translate('fieldDescription', language)]} 
                     className="text-center"

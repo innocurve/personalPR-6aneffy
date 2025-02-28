@@ -41,16 +41,16 @@ export const translations: TranslationDictionary = {
     zh: '价值观',
   },
   valuesDescription: {
-    ko: '우리는\n격동과 변혁의 시대\n한가운데에 서 있습니다.',
-    en: 'We stand\nin the midst of an era\nof turbulence and transformation.',
-    ja: '私たちは\n激動と変革の時代の\n真っ只中にいます。',
-    zh: '我们正处于\n变革与动荡时代的\n中心。',
+    ko: '우리를 날게 하는 것은\n환경이 아니라,\n날 수 있다는 믿음이다.',
+    en: 'What makes us fly\nis not the environment,\nbut the belief that we can fly.',
+    ja: '私たちを飛べるのは\n環境ではなく、\n飛べるという信念だ。',
+    zh: '让我们飞的不是环境\n而是相信能飞。',
   },
   history: {
-    ko: '연혁',
-    en: 'History',
-    ja: '経歴',
-    zh: '历史',
+    ko: '인증 및 자격',
+    en: 'Certifications & Qualifications',
+    ja: '認定・資格',
+    zh: '认证及资格',
   },
   activities: {
     ko: '프로젝트',
@@ -59,16 +59,16 @@ export const translations: TranslationDictionary = {
     zh: '项目',
   },
   name: {
-    ko: '정이노',
-    en: 'Jeong Ino',
-    ja: 'イノ',
-    zh: 'Jeong Ino',
+    ko: '이상현',
+    en: 'Sanghyun Lee',
+    ja: '李相顯',
+    zh: '李相顯',
   },
   title: {
-    ko: '이노카드 템플릿 · 기업인',
-    en: 'InnoCard Template · Entrepreneur',
-    ja: 'イノカードテンプレート · 企業家',
-    zh: 'InnoCard模板·企业家',
+    ko: 'AI Agent|사단법인 운영위원',
+    en: 'AI Agent|Association Committee',
+    ja: 'AIエージェント|社団法人運営委員',
+    zh: 'AI代理|社团法人运营委员',
   },
   birth: {
     ko: '출생',
@@ -77,10 +77,10 @@ export const translations: TranslationDictionary = {
     zh: '出生',
   },
   birthDate: {
-    ko: '2006년 1월 1일',
-    en: 'January 1, 2006',
-    ja: '2006年1月1日',
-    zh: '2006年1月1日',
+    ko: '1999년 8월 9일',
+    en: 'August 9, 1999',
+    ja: '1999年8月9日',
+    zh: '1999年8月9日',
   },
   affiliation: {
     ko: '소속',
@@ -89,22 +89,10 @@ export const translations: TranslationDictionary = {
     zh: '隶属',
   },
   affiliationDescription: {
-    ko: '이노카드 템플릿',
-    en: 'InnoCard Template',
-    ja: 'イノカードテンプレート',
-    zh: 'InnoCard模板',
-  },
-  education: {
-    ko: '학력',
-    en: 'Education',
-    ja: '学歴',
-    zh: '教育',
-  },
-  educationDescription: {
-    ko: '한국대학교 컴퓨터공학과 학사',
-    en: "Korea University, Bachelor of Computer Science",
-    ja: '韓国大学 コンピュータサイエンス学部 学士',
-    zh: '韩国大学 计算机科学与工程学院 学士',
+    ko: '이노커브 AI Agent\n(사)대한청년을세계로 운영위원',
+    en: 'InnoCurve AI Agent\nAssociation Committee',
+    ja: 'イノカーブ AI Agent\n(社)韓国青年を世界へ 運営委員 ',
+    zh: 'InnoCurve AI Agent\n(社)韩国青年走向世界 运营委员',
   },
   field: {
     ko: '분야',
@@ -113,10 +101,10 @@ export const translations: TranslationDictionary = {
     zh: '领域',
   },
   fieldDescription: {
-    ko: 'AI, 마케팅, 커뮤니케이션',
-    en: 'AI, Marketing, Communication',
-    ja: 'AI、マーケティング、コミュニケーション',
-    zh: 'AI，营销，沟通',
+    ko: 'AI, 청년',
+    en: 'AI, Youth',
+    ja: 'AI、青年',
+    zh: 'AI，青年',
   },
   mbti: {
     ko: 'MBTI',
@@ -221,10 +209,10 @@ export const translations: TranslationDictionary = {
     zh: '问候视频',
   },
   innoCardInquiry: {
-    ko: 'InnoCard\n문의',
-    en: 'InnoCard\nInquiry',
-    ja: 'InnoCard\nお問い合わせ',
-    zh: 'InnoCard\n咨询',
+    ko: '문의',
+    en: 'Inquiry',
+    ja: 'お問い合わせ',
+    zh: '咨询',
   },
   contactOptions: {
     ko: '연락하기',
@@ -317,16 +305,16 @@ export const translations: TranslationDictionary = {
     zh: '返回',
   },
   initialGreeting: {
-    ko: '안녕하세요! 저는 정이노입니다. 무엇을 도와드릴까요?',
-    en: 'Hello! I am Jeong Inno. How can I help you?',
-    ja: 'こんにちは！イノと申します。何かお手伝いできることはありますか？',
-    zh: '你好！我是Jeong Inno。我能为您做些什么？'
+    ko: '안녕하세요! 저는 이상현입니다. 무엇을 도와드릴까요?',
+    en: 'Hello! I am Sanghyun Lee. How can I help you?',
+    ja: 'こんにちは！李相顯と申します。何かお手伝いできることはありますか？',
+    zh: '你好！我是李相顯。我能为您做些什么？'
   },
   cloneGreeting: {
-    ko: "안녕하세요! 저는 정이노's Clone입니다. 무엇을 도와드릴까요?",
-    en: "Hello! I'm Jeong Inno's Clone. How can I help you?",
-    ja: "こんにちは！イノのクローンです。どのようにお手伝いできますか？",
-    zh: "你好！我是Jeong Inno的克隆。我能为您做些什么？"
+    ko: "안녕하세요! 저는 이상현's Clone입니다. 무엇을 도와드릴까요?",
+    en: "Hello! I'm Sanghyun Lee's Clone. How can I help you?",
+    ja: "こんにちは！李相顯のクローンです。どのようにお手伝いできますか？",
+    zh: "你好！我是李相顯的克隆。我能为您做些什么？"
   },
   formEmail: {
     ko: '이메일',
@@ -341,10 +329,10 @@ export const translations: TranslationDictionary = {
     zh: '请输入电子邮件',
   },
   greetingScript: {
-    ko: '안녕하세요!\n저는 이노카드 템플릿용으로 특별히 제작된 이노입니다.\n\n오늘 여러분께 인사드리게 되어 정말 기쁩니다.\n이 영상은 저희의 인사 영상 예시 자료로,\n이노카드 템플릿이 어떻게 여러분의 메시지를 멋지게\n전달할 수 있는지 보여드리기 위해 준비되었습니다.\n\n함께 새로운 경험을 시작해 보시길 바랍니다.\n감사합니다.',
-    en: 'nice to meet you!\nI am Inno, specially created for the InoCard template.\n\nI\'m delighted to greet you today.\nThis video serves as a sample for our greeting video,\ndemonstrating how the InoCard template\ncan beautifully convey your message.\n\nI hope you\'ll join us in experiencing something new.\nThank you!',
-    ja: 'こんにちは！\n私はイノカードのテンプレート用に特別に作られたイノです\n\n今日\n皆さんにご挨拶できることをとても嬉しく思います。\nこの動画は、イノカードのテンプレートがどのようにあなたのメッセージを美しく伝えることができるかを示すための挨拶動画のサンプルです。\n\nぜひ、新しい体験を一緒に始めてみましょう。\nありがとうございます',
-    zh: '你好！\n我是为 InnoCard 模板特别制作的 Ino。\n\n今天很高兴能向大家问好。\n这段视频是我们的问候视频示例，\n展示 InnoCard 模板如何优雅地传达您的信息。\n\n希望您能与我们一起开启新的体验。\n谢谢！'
+    ko: '안녕하세요, 이상현입니다.\n\n세상은 빠르게 변화하고 있습니다.\n하지만 중요한 건 변화를 따라가는 것이 아니라,\n그 변화를 만들어가는 것입니다.\n\n저는 AI를 통해 더 나은 미래를 설계하고,\n새로운 가능성을 만들어가고 있습니다.\n\n흔들리는 세상 속에서도 중심을 잡고,\n주어진 길이 아니라 스스로 길을 만들어가는 것.\n그것이 제가 나아가는 방향입니다.\n\n변화를 기다리지 마세요.\n우리가 변화를 만들 때입니다.\n\n감사합니다.',
+    en: 'Nice to meet you, I\’m Sanghyun Lee.\n\nThe world is changing rapidly.\nBut what truly matters is not just keeping up with change,\nbut being the one who drives it forward.\n\nThrough AI, I am designing a better future\nand creating new possibilities.\n\nEven in an unpredictable world, I stay grounded,\nnot just following the path given, but forging my own.\nThat is the direction I am heading.\n\nDon’t wait for change.\nNow is the time for us to create it.\n\nThank you.',
+    ja: 'こんにちは、イ・サンヒョンです。\n\n世界は急速に変化しています。\nしかし、大切なのはその変化に流されるのではなく、\n自らが変化を生み出すことです。\n\n私はAIを通じて、より良い未来を設計し、\n新たな可能性を創造しています。\n\n不確実な時代の中でも、自らの軸を持ち、\n与えられた道を進むのではなく、自分自身の道を切り開く。\nそれが、私の進む方向です。\n\n変化を待たないでください。\n今こそ、私たちが変化を生み出す時です。\n\nありがとうございます。',
+    zh: '大家好，我是李相顯（Lǐ Xiāngxiǎn）。\n\n世界正在快速变化。但真正重要的，不是单纯地追赶变化，\n而是成为推动变化的人。\n\n通过人工智能，我正在规划更美好的未来，\n创造新的可能性。\n\n即使在动荡的时代，我也保持坚定，\n不只是走别人铺好的路，而是开辟属于自己的道路。\n这就是我前进的方向。\n\n不要等待变化，现在正是我们创造变化的时刻。\n谢谢大家'
   },
   affiliations_1: {
     ko: '이노커브',
@@ -353,16 +341,10 @@ export const translations: TranslationDictionary = {
     zh: 'InnoCurve'
   },
   affiliations_2: {
-    ko: '추가 소속 기관',
-    en: 'Additional Affiliation',
-    ja: '追加所属',
-    zh: '附加隶属'
-  },
-  linkCopied: {
-    ko: '링크가 복사되었습니다',
-    en: 'Link copied to clipboard',
-    ja: 'リンクがコピーされました',
-    zh: '链接已复制'
+    ko: '(사)대한청년을세계로',
+    en: 'Korean Youth to the World',
+    ja: '(社)韓国青年を世界へ',
+    zh: '(社)韩国青年走向世界'
   },
   voiceChat: {
     ko: '음성 대화',
