@@ -162,7 +162,7 @@ export default function Career() {
               <h3 className="text-sm sm:text-base md:text-lg font-semibold text-[#4B6BF5] mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
                 {cert.title}
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-white">
                 {cert.subtitle}
               </p>
             </li>
